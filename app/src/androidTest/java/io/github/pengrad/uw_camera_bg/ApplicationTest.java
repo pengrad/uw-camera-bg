@@ -1,4 +1,4 @@
-package io.github.pengrad.uw_like_snapchat;
+package io.github.pengrad.uw_camera_bg;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
