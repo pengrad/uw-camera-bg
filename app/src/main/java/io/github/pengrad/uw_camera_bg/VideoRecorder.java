@@ -1,6 +1,7 @@
 package io.github.pengrad.uw_camera_bg;
 
 import android.hardware.Camera;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -13,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 import rx.Observable;
 import rx.Subscription;
 import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 /**
  * Stas Parshin
@@ -65,9 +67,10 @@ public class VideoRecorder implements Camera.PictureCallback {
         if (camera == null) {
             throw new RuntimeException("Camera not found");
         }
-        cameraSubscription = Observable.timer(1, TimeUnit.SECONDS)
+        cameraSubscription = Observable.interval(1, TimeUnit.SECONDS, Schedulers.newThread())
                 .subscribe(new Action1<Long>() {
                     public void call(Long aLong) {
+                        Log.d("++++", "timer " + aLong);
                         camera.takePicture(null, null, VideoRecorder.this);
                     }
                 });

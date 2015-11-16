@@ -22,6 +22,12 @@ public class CameraService extends Service {
     }
 
     @Override
+    public void onDestroy() {
+        super.onDestroy();
+        stopRecording();
+    }
+
+    @Override
     public CameraBinder onBind(Intent intent) {
         return new CameraBinder();
     }

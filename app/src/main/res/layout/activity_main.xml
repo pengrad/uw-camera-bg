@@ -1,47 +1,24 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:orientation="vertical"
+              tools:context=".MainActivity">
 
-    <TextureView
-        android:id="@+id/textureView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <View
-        android:id="@+id/transparentView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/transparent_gray"/>
-
-    <TextView
-        android:id="@+id/textTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|center"
-        android:layout_marginTop="50dp"
-        android:text="@string/title__main"
-        android:textColor="@color/blue"
-        android:textSize="48sp"/>
 
     <Button
         android:id="@+id/buttonStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/bg_round_rectangle"
-        android:text="@string/button__analyze"/>
+        android:enabled="false"
+        android:text="Start"/>
 
     <Button
-        android:id="@+id/buttonTakePhoto"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/bg_circle_with_ring"
-        android:visibility="gone"/>
+        android:id="@+id/buttonStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="Stop"/>
 
-
-</FrameLayout>
+</LinearLayout>
